@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+  <main role="main" class="container mt-4">
+    <h1 class="mb-4">Quantum Circuit Simulator</h1>
+    <form id="circuit-form">
+      <div class="mb-3">
+        <label for="num-qubits" class="form-label">Number of Qubits:</label>
+        <input type="number" class="form-control" id="num-qubits" name="num_qubits" min="1" required>
+      </div>
+      <div class="mb-3">
+        <label for="gates" class="form-label">Gates (JSON format):</label>
+        <textarea class="form-control" id="gates" name="gates" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Simulate</button>
+    </form>
+    <div id="result" class="mt-4"></div>
+  </main>
+<%- include('partials/_footer.ejs') %>
+<script src="/js/quantum-circuit.js"></script>
+</body>
+</html>
